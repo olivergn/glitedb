@@ -8,6 +8,29 @@ public class Graph {
     private ArrayList<Entity> entities;
     private int currId = 0;
 
+    public Entity getEntity(int id) {
+        for (Entity e : entities) {
+            if (e.getId() == id) return e;
+        }
+        return null;
+    }
+
+    public Node getNode(int id) {
+        Entity e = getEntity(id);
+        if (e != null) {
+            if (e.getType().equals("node")) return (Node) e;
+        }
+        return null;
+    }
+
+    public Edge getEdge(int id) {
+        Entity e = getEntity(id);
+        if (e != null) {
+            if (e.getType().equals("edge")) return (Edge) e;
+        }
+        return null;
+    }
+
     public void addNode(HashMap<String, String> a) {
         Node n = new Node(a);
         entities.add(n);
