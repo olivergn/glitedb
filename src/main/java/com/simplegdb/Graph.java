@@ -84,8 +84,13 @@ public class Graph {
     }
 
     class Edge extends Entity {
-        public Edge(HashMap<String, String> a) {
+        Node origin;
+        Node destination;
+
+        public Edge(Node o, Node d, HashMap<String, String> a) {
             super("edge", a);
+            origin = o;
+            destination = d;
         }
     }
 }
