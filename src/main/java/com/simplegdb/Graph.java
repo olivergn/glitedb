@@ -114,5 +114,25 @@ public class Graph {
             origin = o;
             destination = d;
         }
+
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append(type)
+            .append(" ")
+            .append(id)
+            .append(" (")
+            .append(origin.getId())
+            .append(",")
+            .append(destination.getId())
+            .append(") { ");
+            for (Map.Entry<String, String> entry : attributes.entrySet()) {
+                sb.append(entry.getKey())
+                .append(": \"")
+                .append(entry.getValue())
+                .append("\" ");
+            }
+            sb.append("}");
+            return sb.toString();
+        }
     }
 }
