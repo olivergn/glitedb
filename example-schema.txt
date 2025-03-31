@@ -1,0 +1,18 @@
+put node name:"Alice" age:"19" gender:"F" // 1
+put node name:"Bob" age:"20" gender:"M" // 2
+put node name:"Dave" age:"54" gender:"M" // 3
+put node name:"Students" type:"group" // 4
+put node name:"Professors" type:"group" // 5
+put edge 1,4 label:"in" // 6
+put edge 2,4 label:"in" // 7
+put edge 3,5 label:"in" // 8
+put edge 1,2 label:"knows" // 9
+put edge 2,1 label:"knows" // 10
+get 1
+get 1.name
+update 1 age:"20"
+update 1 favorite_food:"Pizza"
+remove 10
+remove 9
+remove 7
+remove 2
