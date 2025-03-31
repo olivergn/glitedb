@@ -13,10 +13,11 @@ public class Graph {
         public Entity(HashMap<String, String> a) {
             id = currId++;
             attributes = new HashMap<>();
-            for (String key : a.keySet()) {
-                attributes.put(key, a.get(key));
+            if (a != null) {
+                for (String key : a.keySet()) {
+                    attributes.put(key, a.get(key));
+                }
             }
-            ;
         }
     }
 
