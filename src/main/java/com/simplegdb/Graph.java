@@ -5,7 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Graph {
+    private ArrayList<Entity> entities;
     private int currId = 0;
+
+    public void addNode(HashMap<String, String> a) {
+        Node n = new Node(a);
+        entities.add(n);
+    }
     
     class Entity {
         protected int id;
