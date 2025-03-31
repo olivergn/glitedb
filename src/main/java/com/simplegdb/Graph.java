@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Graph {
-    private static int currId = 0;
-
-    static class Entity {
+    private int currId = 0;
+    
+    class Entity {
         protected int id;
         protected String type;
         protected HashMap<String, String> attributes;
@@ -39,13 +39,13 @@ public class Graph {
         }
     }
 
-    static class Node extends Entity {
+    class Node extends Entity {
         public Node(HashMap<String, String> a) {
             super("node", a);
         }
     }
 
-    static class Edge extends Entity {
+    class Edge extends Entity {
         public Edge(HashMap<String, String> a) {
             super("edge", a);
         }
