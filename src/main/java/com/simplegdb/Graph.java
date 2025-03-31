@@ -20,6 +20,10 @@ public class Graph {
         return null;
     }
 
+    public ArrayList<Entity> getEntities() {
+        return entities;
+    }
+
     public Node getNode(int id) {
         Entity e = getEntity(id);
         if (e != null) {
