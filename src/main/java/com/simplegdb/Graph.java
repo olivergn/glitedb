@@ -1,5 +1,6 @@
 package com.simplegdb;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,6 +21,14 @@ public class Graph {
                     attributes.put(key, a.get(key));
                 }
             }
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getType() {
+            return type;
         }
 
         public String toString() {
