@@ -6,7 +6,12 @@ import java.util.Map;
 
 public class Graph {
     private ArrayList<Entity> entities;
-    private int currId = 0;
+    private int currId;
+
+    public Graph() {
+        entities = new ArrayList<>();
+        currId = 0;
+    }
 
     public Entity getEntity(int id) {
         for (Entity e : entities) {
