@@ -78,8 +78,11 @@ public class Graph {
     }
 
     class Node extends Entity {
+        ArrayList<Edge> edges;
+
         public Node(HashMap<String, String> a) {
             super("node", a);
+            edges = new ArrayList<>();
         }
     }
 
