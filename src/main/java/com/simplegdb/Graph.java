@@ -1,6 +1,7 @@
 package com.simplegdb;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Graph {
     private static int currId = 0;
@@ -19,6 +20,22 @@ public class Graph {
                     attributes.put(key, a.get(key));
                 }
             }
+        }
+
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append(type)
+            .append(" ")
+            .append(id)
+            .append(" { ");
+            for (Map.Entry<String, String> entry : attributes.entrySet()) {
+                sb.append(entry.getKey())
+                .append(": \"")
+                .append(entry.getValue())
+                .append("\" ");
+            }
+            sb.append("}");
+            return sb.toString();
         }
     }
 
