@@ -40,6 +40,16 @@ public class Graph {
         Node n = new Node(a);
         entities.add(n);
     }
+
+    public void addEdge(int oId, int dId, HashMap<String, String> a) {
+        Node o = getNode(oId);
+        Node d = getNode(dId);
+        if (o == null || d == null) return;
+
+        Edge e = new Edge(o, d, a);
+        o.addEdge(e);
+        entities.add(e);
+    }
     
     class Entity {
         protected int id;
@@ -88,6 +98,10 @@ public class Graph {
         public Node(HashMap<String, String> a) {
             super("node", a);
             edges = new ArrayList<>();
+        }
+
+        public void addEdge(Edge e) {
+            edges.add(e);
         }
     }
 
