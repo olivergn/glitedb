@@ -10,8 +10,9 @@ public class Graph {
         protected String type;
         protected HashMap<String, String> attributes;
 
-        public Entity(HashMap<String, String> a) {
+        public Entity(String t, HashMap<String, String> a) {
             id = currId++;
+            type = t;
             attributes = new HashMap<>();
             if (a != null) {
                 for (String key : a.keySet()) {
@@ -23,15 +24,13 @@ public class Graph {
 
     static class Node extends Entity {
         public Node(HashMap<String, String> a) {
-            super(a);
-            type = "node";
+            super("node", a);
         }
     }
 
     static class Edge extends Entity {
         public Edge(HashMap<String, String> a) {
-            super(a);
-            type = "edge";
+            super("edge", a);
         }
     }
 }
