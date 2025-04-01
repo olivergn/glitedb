@@ -59,7 +59,7 @@ public class GraphTest {
         g.addEdge(2, 9, e2); // 15 - Tenants contains Clark
 
         for (int i = 0; i < g.getEntities().size(); i++) {
-            System.out.println(g.getEntities().get(i));
+            System.out.println(g.getEntity(i));
         }
     }
 }
