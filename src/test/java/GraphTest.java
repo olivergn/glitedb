@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-import com.simplegdb.Graph;
+import com.glitedb.Graph;
 
 public class GraphTest {
         public static void main(String[] args) {

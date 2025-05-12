@@ -1,4 +1,4 @@
-package com.simplegdb;
+package com.glitedb;
 
 import java.util.ArrayList;
 import java.util.HashMap;
