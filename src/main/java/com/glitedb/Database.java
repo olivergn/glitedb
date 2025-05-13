@@ -9,12 +9,14 @@ public class Database {
         graphs = new HashMap<>();
     }
 
-    public void createGraph(String name, Graph graph) throws Exception {
+    public Graph createGraph(String name) throws Exception {
         if (graphs.containsKey(name)) {
             throw new Exception("A graph with this name already exists.");
         }
         else {
+            Graph graph = new Graph();
             graphs.put(name, graph);
+            return graph;
         }
     }
 
