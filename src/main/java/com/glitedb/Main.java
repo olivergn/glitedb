@@ -10,21 +10,24 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to GliteDB!");
         System.out.println("To create a database, use the command `create db`.");
+        System.out.print("> ");
 
         while (sc.hasNextLine()) {
             processQuery(sc.nextLine());
+            System.out.print("> ");
         }
     }
 
     private static void processQuery(String query) {
-        switch (query.trim().toLowerCase()) {
-            case "help":
-                printHelp();
-                return;
-            case "create database", "create db":
-                createDatabase();
-                return;
-            default:
+        query = query.trim().toLowerCase();
+
+        if (query.startsWith("help")) {
+            printHelp();
+            return;
+        } else if (query.startsWith("create database") || query.startsWith("create db")) {
+            createDatabase();
+            return;
+        } else {
                 System.out.println("That is not a recognized command. For a list of valid commands, use the command `help`.");
         }
     }
@@ -45,6 +48,8 @@ public class Main {
             if (sc.nextLine().trim().equalsIgnoreCase("y")) {
                 currentDatabase = new Database();
                 System.out.println("Database created.");
+            } else {
+                System.out.println("Database creation aborted.");
             }
         }
     }
