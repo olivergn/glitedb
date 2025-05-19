@@ -81,6 +81,7 @@ public class Main {
         } else {
             try {
                 currentDatabase.deleteGraph(name);
+                System.out.println("Graph \"" + name + "\" deleted.");
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
             }
