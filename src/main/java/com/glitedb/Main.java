@@ -27,11 +27,25 @@ public class Main {
         } else if (queryLC.startsWith("create database") || queryLC.startsWith("create db")) {
             createDatabase();
         } else if (queryLC.startsWith("create graph")) {
-            createGraph(queryLC.substring(12).trim());
+            if (queryLC.length() >= 14) {
+                createGraph(queryLC.substring(13).trim());
+            } else {
+                System.out.println("Graph name cannot be empty.");
+            }
         } else if (queryLC.startsWith("delete graph")) {
-            deleteGraph(queryLC.substring(12).trim());
+            if (queryLC.length() >= 14) {
+                deleteGraph(queryLC.substring(13).trim());
+            } else {
+                System.out.println("Graph name cannot be empty.");
+            }
         } else if (queryLC.startsWith("use graph")) {
-            useGraph(queryLC.substring(9).trim());
+            if (queryLC.length() >= 11) {
+                useGraph(queryLC.substring(10).trim());
+            } else {
+                System.out.println("Graph name cannot be empty.");
+            }
+        } else if (queryLC.startsWith("create node")) {
+            // createNode()
         } else {
             System.out.println("That is not a recognized command. For a list of valid commands, use the command `help`.");
         }
